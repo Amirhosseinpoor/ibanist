@@ -19,9 +19,9 @@ def main():
         def shomare_shaba(self, generate=True):
             if generate:
                 iban = self.sehat_shomare_shaba(valid=False)
-            self.tajzie(iban)
+            self.parse(iban)
 
-        def tajzie(self, iban):
+        def parse(self, iban):
             bi = self.real_number(iban)[2:5]
             bank = banks.pishshomare_bank[bi]
             an = self.real_number(iban)[5:]
@@ -65,6 +65,7 @@ def main():
                 print(iban, '\t', an, '\t', bank)
             else:
                 print("invalid")
+                self.shomare_hesab()
 
         def shomare_hesab(self):
             print('bank keshavarzi:1\nbank tejarat:2\nbank refah:3\nbank saderat:4\n'
@@ -132,7 +133,7 @@ def main():
             if len(cd) < 2:
                 cd = "0" + str(cd)
             iban = cc + cd + bban
-            self.tajzie(iban)
+            self.parse(iban)
 
         def bank_tejarat(self):
             cc = 'IR'
@@ -146,7 +147,7 @@ def main():
             if len(cd) < 2:
                 cd = "0" + str(cd)
             iban = cc + cd + bban
-            self.tajzie(iban)
+            self.parse(iban)
 
         def bank_refah(self):
             cc = 'IR'
@@ -160,7 +161,7 @@ def main():
             if len(cd) < 2:
                 cd = "0" + str(cd)
             iban = cc + cd + bban
-            self.tajzie(iban)
+            self.parse(iban)
 
         def bank_saderat(self):
             cc = 'IR'
@@ -174,7 +175,7 @@ def main():
             if len(cd) < 2:
                 cd = "0" + str(cd)
             iban = cc + cd + bban
-            self.tajzie(iban)
+            self.parse(iban)
 
         def bank_parsian(self):
             cc = 'IR'
@@ -186,7 +187,7 @@ def main():
             if len(cd) < 2:
                 cd = "0" + str(cd)
             iban = cc + cd + bban
-            self.tajzie(iban)
+            self.parse(iban)
 
         def bank_mehriran(self):
             cc = 'IR'
@@ -199,7 +200,7 @@ def main():
             if len(cd) < 2:
                 cd = "0" + str(cd)
             iban = cc + cd + bban
-            self.tajzie(iban)
+            self.parse(iban)
 
         def bank_melat(self):
             cc = 'IR'
@@ -217,7 +218,7 @@ def main():
             if len(cd) < 2:
                 cd = "0" + str(cd)
             iban = cc + cd + bban
-            self.tajzie(iban)
+            self.parse(iban)
 
         def bank_meli(self):
             cc = 'IR'
@@ -237,7 +238,7 @@ def main():
             if len(cd) < 2:
                 cd = "0" + str(cd)
             iban = cc + cd + bban
-            self.tajzie(iban)
+            self.parse(iban)
             
     Ibanist()
 

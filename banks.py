@@ -36,7 +36,7 @@ pishshomare_bank = {
 
 }
 
-bank_pishshomare = {  # why you put this here?
+bank_pishshomare = {
         'bank eghtesad novin': '055',
         'bank parsian': '054',
         'bank pasargad': '057',
