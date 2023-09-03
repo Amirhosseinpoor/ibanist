@@ -33,6 +33,7 @@ pishshomare_bank = {
         '080': 'bank noor',
         '060': 'bank mehriran',
         '079': 'bank mehreghtesad',
+        '': ''
 
 }
 
@@ -71,7 +72,12 @@ bank_pishshomare = {
         'bank noor': '080',
         'bank mehriran': '060',
         'bank mehreghtesad': '079',
-
+        '': ''
+}
+num_bunk = {
+         '1': 'bank keshavarzi', '2': 'bank tejarat', '3': 'bank refah', '4': 'bank saderat iran',
+        '5': 'bank parsian', '6': 'bank mehriran', '7': 'bank meli iran', '8': 'bank melat',
+        '': ''
 }
 
 
