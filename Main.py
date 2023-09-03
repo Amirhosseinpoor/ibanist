@@ -80,7 +80,8 @@ class Ibanist:
                 self.bank_parsian(cc, bi, an)
 
             case '060':  # bank mehriran
-                an = an[:-3] + an[-1]
+                if self.iban != '':
+                    an = an[:-3] + an[-1]
                 self.bank_mehriran(cc, bi, an)
 
             case '017':  # bank meli
@@ -211,19 +212,6 @@ class Ibanist:
 # '1': 'bank keshavarzi', '2': 'bank tejarat', '3': 'bank refah', '4': 'bank saderat iran',
 #         '5': 'bank parsian', '6': 'bank mehriran', '7': 'bank meli iran', '8': 'bank melat',
 
-Ibanist(iban='8801 6000 0000  0006 2991 0915')
-# Ibanist(iban='IR8801 6000 0000  0006 2991 0915')
-# Ibanist(bank='1', an='0629910915')
-# Ibanist(bank='1', an='06 29 9109 15')
-# Ibanist(bank='1', an='6 29 9109 15')
-# Ibanist(iban='73 0180 0000 0000 3946 6539 76')
-# Ibanist(iban='IR73 0180 0000 0000 3946 6539 76')
-# Ibanist(bank='2', an='3946653976')
-# Ibanist(bank='2', an='394 6 65 39 76')
-# Ibanist(iban='IR85016000 03  0006 2991 0915')
-Ibanist(iban='660540121920100563760602')
-Ibanist(bank='5', an='20100563760602')
-# Ibanist(bank='5', an='201 005 637 606 02')
-
+Ibanist(an='3019025140830361', bank='6')
 
 

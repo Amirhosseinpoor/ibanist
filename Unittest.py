@@ -104,6 +104,38 @@ class Testing(unittest.TestCase):
         e = f'{b} {c} {d}'
         self.assertEqual(e, k.__str__(), 'valid')
 
+    def test_fifteen(self):
+        k = Main.Ibanist(iban='57 0600 3019 0251 4083 0360 01')
+        b = 'IR570600301902514083036001'
+        c = 'bank mehriran'
+        d = '3019025140830361'
+        e = f'{b} {c} {d}'
+        self.assertEqual(e, k.__str__(), 'valid')
+
+    def test_sixteen(self):
+        k = Main.Ibanist(iban='ir57 0600 3019 0251 4083 0360 01')
+        b = 'IR570600301902514083036001'
+        c = 'bank mehriran'
+        d = '3019025140830361'
+        e = f'{b} {c} {d}'
+        self.assertEqual(e, k.__str__(), 'valid')
+
+    def test_seventeen(self):
+        k = Main.Ibanist(an='3019025140830361', bank='6')
+        b = 'IR570600301902514083036001'
+        c = 'bank mehriran'
+        d = '3019025140830361'
+        e = f'{b} {c} {d}'
+        self.assertEqual(e, k.__str__(), 'valid')
+
+    def test_eighteen(self):
+        k = Main.Ibanist(an='30190 25140   830361', bank='6')
+        b = 'IR570600301902514083036001'
+        c = 'bank mehriran'
+        d = '3019025140830361'
+        e = f'{b} {c} {d}'
+        self.assertEqual(e, k.__str__(), 'valid')
+
 
 if __name__ == '__main__':
     unittest.main()
