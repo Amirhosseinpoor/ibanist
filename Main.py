@@ -2,7 +2,6 @@ import re
 import banks
 
 
-
 class Ibanist:
     def __init__(self, iban='', an='', bank='', accounttype=''):
         self.valid = False
@@ -37,6 +36,7 @@ class Ibanist:
             print(f'{self.iban} {self.bank} {self.an}')
 
     def parse(self, iban):
+        global bank
         cc = 'IR'
         if self.valid:
             bi = self.bi
@@ -176,6 +176,7 @@ class Ibanist:
         self.iban = iban
 
     def bank_melat(self, cc, bi, an, accounttype='1'):
+        global bban
         an = re.sub(r' ', '', an)
 
         if accounttype == "1":
@@ -191,6 +192,7 @@ class Ibanist:
         self.iban = iban
 
     def bank_meli(self, cc, bi, an, accounttype='1'):
+        global bban
         an = re.sub(r' ', '', an)
 
         if len(an) == 12:
