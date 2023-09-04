@@ -98,6 +98,11 @@ class Ibanist:
                 an = re.sub(r'^0+', '', an)
                 self.bank_melat(cc, bi, an, self.accountype)
 
+            case '015':  # bank sepah
+                if len(an) == 12:
+                    an = '0' + an
+                self.bank_sepah(cc, bi, an)
+
         return bank, an
 
     def real_number(self, num):
@@ -205,6 +210,17 @@ class Ibanist:
         elif accounttype == "2":
             # tashilat
             bban = bi + "10000" + str(an)
+        cd = str(98 - int(bban + "182700") % 97)
+        if len(cd) < 2:
+            cd = "0" + str(cd)
+        iban = cc + cd + bban
+        self.iban = iban
+
+    def bank_sepah(self, cc, bi, an):
+        an = re.sub(r' ', '', an)
+        if len(an) == 12:
+            an = '0' + an
+        bban = bi + "000000" + str(an)
         cd = str(98 - int(bban + "182700") % 97)
         if len(cd) < 2:
             cd = "0" + str(cd)

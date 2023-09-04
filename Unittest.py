@@ -156,6 +156,54 @@ class Testing(unittest.TestCase):
         e = f'{b} {c} {d}'
         self.assertEqual(e, k.__str__())
 
+    def test_twenty(self):
+        k = Main.Ibanist(iban='520150000000171300615501')
+        b = 'IR520150000000171300615501'
+        c = 'bank sepah'
+        d = '0171300615501'
+        e = f'{b} {c} {d}'
+        self.assertEqual(e, k.__str__())
+
+    def test_22(self):
+        k = Main.Ibanist(iban='52015000 000017 1300 615501')
+        b = 'IR520150000000171300615501'
+        c = 'bank sepah'
+        d = '0171300615501'
+        e = f'{b} {c} {d}'
+        self.assertEqual(e, k.__str__())
+
+    def test_23(self):
+        k = Main.Ibanist(an='0171300615501', bank='9')
+        b = 'IR520150000000171300615501'
+        c = 'bank sepah'
+        d = '0171300615501'
+        e = f'{b} {c} {d}'
+        self.assertEqual(e, k.__str__())
+
+    def test_24(self):
+        k = Main.Ibanist(an='017 130 0 6 1 5  501', bank='9')
+        b = 'IR520150000000171300615501'
+        c = 'bank sepah'
+        d = '0171300615501'
+        e = f'{b} {c} {d}'
+        self.assertEqual(e, k.__str__())
+
+    def test_25(self):
+        k = Main.Ibanist(an='17 130 0 6 1 5  501', bank='9')
+        b = 'IR520150000000171300615501'
+        c = 'bank sepah'
+        d = '0171300615501'
+        e = f'{b} {c} {d}'
+        self.assertEqual(e, k.__str__())
+
+    def test_26(self):
+        k = Main.Ibanist(iban='52015000 000017 1300 615501', an='17 130 0 6 1 5  501', bank='9')
+        b = 'IR520150000000171300615501'
+        c = 'bank sepah'
+        d = '0171300615501'
+        e = f'{b} {c} {d}'
+        self.assertEqual(e, k.__str__())
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -76,7 +76,7 @@ bank_pishshomare = {
 }
 num_bunk = {
          '1': 'bank keshavarzi', '2': 'bank tejarat', '3': 'bank refah', '4': 'bank saderat iran',
-         '5': 'bank parsian', '6': 'bank mehriran', '7': 'bank meli iran', '8': 'bank melat',
+         '5': 'bank parsian', '6': 'bank mehriran', '7': 'bank meli iran', '8': 'bank melat', '9': 'bank sepah',
          '': ''
 }
 
