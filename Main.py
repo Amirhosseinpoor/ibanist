@@ -120,7 +120,6 @@ class Ibanist:
 
     def bank_tejarat(self, cc, bi, an):
         an = re.sub(r' ', '', an)
-
         if len(an) == 9:
             an = '0' + an
         bban = bi + "000000000" + str(an)
