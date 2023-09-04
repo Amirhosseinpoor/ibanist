@@ -12,7 +12,6 @@ class Ibanist:
         self.iban = iban
         self.an = an
         self.bi = banks.bank_pishshomare[banks.num_bunk[bank]]
-
         self.bank, self.an = self.parse(self.iban)
         self.truth(self.iban, self.bank, self.an)
 
